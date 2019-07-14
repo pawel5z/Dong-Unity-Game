@@ -5,7 +5,7 @@ using UnityEngine;
 public class BallMovement : MonoBehaviour
 {
     public float initSpeed;
-    public float speed;
+    private float speed;
     private readonly List<float> rngPosNegList = new List<float> { -1, 1 };
     private Rigidbody2D rb2d;
     private int bounceCount = 0;
@@ -27,12 +27,15 @@ public class BallMovement : MonoBehaviour
         yield return null;
     }
 
-    public void Reset()
+    public IEnumerator Reset()
     {
+        yield return new WaitForSeconds(1);
+        this.GetComponentInChildren<TrailRenderer>().emitting = false;
         this.transform.position = new Vector2(0, 0);
         this.rb2d.velocity = new Vector2(0, 0);
         this.speed = initSpeed;
         this.bounceCount = 0;
+        yield return null;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -54,6 +57,11 @@ public class BallMovement : MonoBehaviour
             speed = initSpeed + 3 * Mathf.Log(2 + bounceCount, 2);
             rb2d.velocity = new Vector2(-1 * xDirSgn * speed * speedMult * Mathf.Cos(angleRad), sgn * speed * speedMult * Mathf.Sin(angleRad));
             bounceCount++;
+
+            if (intDiff == 3)
+                this.GetComponentInChildren<TrailRenderer>().emitting = true;
+            else
+                this.GetComponentInChildren<TrailRenderer>().emitting = false;
         }
     }
 }

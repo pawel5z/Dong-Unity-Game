@@ -20,7 +20,7 @@ public class GoalBehaviour : MonoBehaviour
     {
         if (collision.tag == "Ball")
         {
-            collision.GetComponent<BallMovement>().Reset();
+            collision.GetComponent<BallMovement>().StartCoroutine("Reset");
             collision.GetComponent<BallMovement>().StartCoroutine("Launch");
         }
     }
