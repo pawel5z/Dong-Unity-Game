@@ -8,14 +8,14 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         
     }
 
     // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
-        GetComponent<Rigidbody2D>().velocity = new Vector2(0, Input.GetAxis(verticalAxisName) * speed);
+        this.GetComponent<Rigidbody2D>().velocity = new Vector2(0, Input.GetAxis(verticalAxisName) * speed);
     }
 }
