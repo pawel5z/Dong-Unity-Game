@@ -279,6 +279,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5792942237047056248, guid: 62ec955420796914da1ec767edfb76d9,
+        type: 3}
+      propertyPath: verticalAxisName
+      value: PRightVertical
+      objectReference: {fileID: 0}
     - target: {fileID: 6175672977906054863, guid: 62ec955420796914da1ec767edfb76d9,
         type: 3}
       propertyPath: m_Name
@@ -506,6 +511,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5792942237047056248, guid: 62ec955420796914da1ec767edfb76d9,
+        type: 3}
+      propertyPath: verticalAxisName
+      value: PLeftVertical
+      objectReference: {fileID: 0}
     - target: {fileID: 6175672977906054863, guid: 62ec955420796914da1ec767edfb76d9,
         type: 3}
       propertyPath: m_Name
