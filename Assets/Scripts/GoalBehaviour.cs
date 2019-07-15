@@ -11,11 +11,13 @@ public class GoalBehaviour : MonoBehaviour
     public Text winnerText;
     public int maxScore;
     public GameObject gameController;
+    public GameObject mainCamera;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Ball")
         {
+            mainCamera.GetComponent<ScreenShaker>().StartCoroutine("Shake", 0.5);
             scoreParticles.Play();
             score++;
             playerScoreText.text = score.ToString();
