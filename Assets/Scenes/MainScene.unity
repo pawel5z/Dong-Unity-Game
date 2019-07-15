@@ -817,6 +817,7 @@ GameObject:
   - component: {fileID: 777142975}
   - component: {fileID: 777142974}
   - component: {fileID: 777142973}
+  - component: {fileID: 777142976}
   m_Layer: 5
   m_Name: PositiveAnswer
   m_TagString: Untagged
@@ -937,6 +938,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 777142971}
   m_CullTransparentMesh: 0
+--- !u!114 &777142976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 777142971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d25837f1af29854b9a46108692a3a96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &907008361 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6175672977906054863, guid: 62ec955420796914da1ec767edfb76d9,

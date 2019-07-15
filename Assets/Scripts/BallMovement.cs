@@ -23,7 +23,6 @@ public class BallMovement : MonoBehaviour
         StartCoroutine("Launch");
     }
 
-
     private IEnumerator SuddenDeathTimer()
     {
         timeWithoutGoal = 0;
