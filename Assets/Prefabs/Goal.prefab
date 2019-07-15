@@ -70,3 +70,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 047693829922aad48a35eaf050abfc6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerScoreText: {fileID: 0}
+  scoreParticles: {fileID: 0}
+  winnerText: {fileID: 0}
+  maxScore: 1

@@ -5,19 +5,29 @@ using UnityEngine.UI;
 
 public class GoalBehaviour : MonoBehaviour
 {
-    public int score = 0;
+    private int score = 0;
     public Text playerScoreText;
     public ParticleSystem scoreParticles;
+    public Text winnerText;
+    public int maxScore;
+    public GameObject gameController;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Ball")
         {
             scoreParticles.Play();
-            collision.GetComponent<BallMovement>().StartCoroutine("Reset");
-            collision.GetComponent<BallMovement>().StartCoroutine("Launch");
             score++;
             playerScoreText.text = score.ToString();
+            collision.GetComponent<BallMovement>().StartCoroutine("Reset");
+
+            if (score >= maxScore)
+            {
+                winnerText.GetComponent<Animator>().SetTrigger("Win");
+                gameController.GetComponent<GameControllerBehaviour>().StartCoroutine("GameOver");
+            }
+            else
+                collision.GetComponent<BallMovement>().StartCoroutine("Launch");
         }
     }
 }
