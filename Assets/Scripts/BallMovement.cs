@@ -5,10 +5,14 @@ using UnityEngine;
 public class BallMovement : MonoBehaviour
 {
     public float initSpeed;
+    public GameObject suddenDeathController;
+    public float timeToSuddenDeath;
+
     private float speed;
     private readonly List<float> rngPosNegList = new List<float> { -1, 1 };
     private Rigidbody2D rb2d;
     private int bounceCount = 0;
+    private float timeWithoutGoal = 0;
 
     // Start is called before the first frame update
     private void Start()
@@ -19,9 +23,23 @@ public class BallMovement : MonoBehaviour
         StartCoroutine("Launch");
     }
 
+
+    private IEnumerator SuddenDeathTimer()
+    {
+        timeWithoutGoal = 0;
+        while(true)
+        {
+            yield return new WaitForSeconds(1);
+            timeWithoutGoal += 1;
+            if (timeWithoutGoal >= timeToSuddenDeath)
+                suddenDeathController.GetComponent<SuddenDeathControllerBehaviour>().StartSuddenDeath();
+        }
+    }
+
     public IEnumerator Launch()
     {
         yield return new WaitForSeconds(2);
+        StartCoroutine("SuddenDeathTimer");
         float angleRad = Random.Range(3, 7) * 15 * Mathf.Deg2Rad;
         rb2d.velocity = new Vector2(initSpeed * Mathf.Sin(angleRad) * rngPosNegList[Random.Range(0, rngPosNegList.Count)], initSpeed * Mathf.Cos(angleRad) * rngPosNegList[Random.Range(0, rngPosNegList.Count)]);
         yield return null;
@@ -29,6 +47,8 @@ public class BallMovement : MonoBehaviour
 
     public IEnumerator Reset()
     {
+        StopCoroutine("SuddenDeathTimer");
+        suddenDeathController.GetComponent<SuddenDeathControllerBehaviour>().StopSuddenDeath();
         yield return new WaitForSeconds(1);
         this.GetComponentInChildren<TrailRenderer>().emitting = false;
         this.transform.position = new Vector2(0, 0);

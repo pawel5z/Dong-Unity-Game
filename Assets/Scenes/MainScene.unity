@@ -120,6 +120,52 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &290660904
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 290660906}
+  - component: {fileID: 290660905}
+  m_Layer: 0
+  m_Name: SuddenDeathController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &290660905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 290660904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b39bab3d5624c84f9077dad23cc9dde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  players:
+  - {fileID: 984269003}
+  - {fileID: 907008361}
+--- !u!4 &290660906
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 290660904}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -302,6 +348,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62ec955420796914da1ec767edfb76d9, type: 3}
+--- !u!1 &907008361 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6175672977906054863, guid: 62ec955420796914da1ec767edfb76d9,
+    type: 3}
+  m_PrefabInstance: {fileID: 695886270}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &909331288
 GameObject:
   m_ObjectHideFlags: 0
@@ -386,6 +438,12 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 100, y: 8}
   m_EdgeRadius: 0
+--- !u!1 &984269003 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6175672977906054863, guid: 62ec955420796914da1ec767edfb76d9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1577904501}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1085300763
 GameObject:
   m_ObjectHideFlags: 0
@@ -1752,32 +1810,32 @@ ParticleSystem:
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 0.9990684, b: 0, a: 1}
-        key1: {r: 1, g: 1, b: 0, a: 0.5019608}
-        key2: {r: 0, g: 0, b: 0, a: 0}
-        key3: {r: 0, g: 0, b: 0, a: 0}
-        key4: {r: 0, g: 0, b: 0, a: 0}
-        key5: {r: 0, g: 0, b: 0, a: 0}
+        key1: {r: 1, g: 0.9990684, b: 0, a: 1}
+        key2: {r: 1, g: 0.9990684, b: 0, a: 0}
+        key3: {r: 1, g: 0.9990684, b: 0, a: 0.6439296}
+        key4: {r: 1, g: 0.9990684, b: 0, a: 0.5112021}
+        key5: {r: 1, g: 0.9990684, b: 0, a: 0.7349577}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 0
-        ctime1: 32768
-        ctime2: 0
-        ctime3: 0
-        ctime4: 0
-        ctime5: 0
+        ctime1: 65535
+        ctime2: 65535
+        ctime3: 65535
+        ctime4: 65535
+        ctime5: 65535
         ctime6: 0
         ctime7: 0
         atime0: 0
         atime1: 32768
-        atime2: 0
-        atime3: 0
-        atime4: 0
-        atime5: 0
+        atime2: 65535
+        atime3: 65535
+        atime4: 65535
+        atime5: 65535
         atime6: 0
         atime7: 0
         m_Mode: 0
         m_NumColorKeys: 2
-        m_NumAlphaKeys: 2
+        m_NumAlphaKeys: 3
       minGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -5207,7 +5265,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.25
+  m_Time: 0.15
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1.75
@@ -5224,13 +5282,13 @@ TrailRenderer:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.7967224
+        time: 0.9
         value: 0
-        inSlope: 0
-        outSlope: 0
+        inSlope: -1.3203471
+        outSlope: -1.3203471
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0
+        inWeight: 0.11475404
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -5238,7 +5296,7 @@ TrailRenderer:
     colorGradient:
       serializedVersion: 2
       key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 0.5019608}
+      key1: {r: 1, g: 1, b: 1, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -5254,8 +5312,8 @@ TrailRenderer:
       ctime6: 0
       ctime7: 0
       atime0: 0
-      atime1: 32768
-      atime2: 0
+      atime1: 42405
+      atime2: 65535
       atime3: 0
       atime4: 0
       atime5: 0
@@ -5263,7 +5321,7 @@ TrailRenderer:
       atime7: 0
       m_Mode: 0
       m_NumColorKeys: 2
-      m_NumAlphaKeys: 2
+      m_NumAlphaKeys: 3
     numCornerVertices: 0
     numCapVertices: 0
     alignment: 0
@@ -5502,6 +5560,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1707461178590511935, guid: ae2d14d452ee49743bc06df30caee607,
+        type: 3}
+      propertyPath: suddenDeathController
+      value: 
+      objectReference: {fileID: 290660904}
+    - target: {fileID: 1707461178590511935, guid: ae2d14d452ee49743bc06df30caee607,
+        type: 3}
+      propertyPath: timeToSuddenDeath
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae2d14d452ee49743bc06df30caee607, type: 3}
