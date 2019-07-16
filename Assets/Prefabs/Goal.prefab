@@ -73,5 +73,6 @@ MonoBehaviour:
   playerScoreText: {fileID: 0}
   scoreParticles: {fileID: 0}
   winnerText: {fileID: 0}
-  maxScore: 1
+  maxScore: 5
   gameController: {fileID: 0}
+  mainCamera: {fileID: 0}

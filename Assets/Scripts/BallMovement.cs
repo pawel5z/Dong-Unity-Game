@@ -26,7 +26,7 @@ public class BallMovement : MonoBehaviour
     private IEnumerator SuddenDeathTimer()
     {
         timeWithoutGoal = 0;
-        while(true)
+        while(timeWithoutGoal < timeToSuddenDeath)
         {
             yield return new WaitForSeconds(1);
             timeWithoutGoal += 1;

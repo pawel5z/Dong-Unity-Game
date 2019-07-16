@@ -142,4 +142,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initSpeed: 35
-  speed: 0
+  suddenDeathController: {fileID: 0}
+  timeToSuddenDeath: 20
