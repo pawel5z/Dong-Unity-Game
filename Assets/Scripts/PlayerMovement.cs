@@ -13,8 +13,8 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        rb2d = this.GetComponent<Rigidbody2D>();
-        xPosSgn = Mathf.Sign(this.transform.position.x);
+        rb2d = GetComponent<Rigidbody2D>();
+        xPosSgn = Mathf.Sign(transform.position.x);
     }
 
     // Update is called once per frame
@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Reset()
     {
-        this.transform.position = new Vector2(35 * xPosSgn, this.transform.position.y);
+        transform.position = new Vector2(35 * xPosSgn, transform.position.y);
         rb2d.velocity = new Vector2(0, rb2d.velocity.y);
     }
 

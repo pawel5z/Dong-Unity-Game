@@ -9,7 +9,7 @@ public class ScreenShaker : MonoBehaviour
 
     private void Start()
     {
-        defaultCamPos = this.transform.position;
+        defaultCamPos = transform.position;
     }
 
     public IEnumerator Shake(float time)
@@ -17,11 +17,11 @@ public class ScreenShaker : MonoBehaviour
         while (time > 0)
         {
             Vector3 tempPos = defaultCamPos + (Random.insideUnitSphere * shakeIntensity);
-            this.transform.position = new Vector3(tempPos.x, tempPos.y, defaultCamPos.z);
+            transform.position = new Vector3(tempPos.x, tempPos.y, defaultCamPos.z);
             time -= Time.deltaTime;
             yield return null;
         }
-        this.transform.position = defaultCamPos;
+        transform.position = defaultCamPos;
         yield return null;
     }
 }
