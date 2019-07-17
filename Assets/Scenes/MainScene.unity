@@ -7134,7 +7134,7 @@ MonoBehaviour:
   - {fileID: 7637635640215653754, guid: 9526ed638d0e34b47a8de255d8657f7a, type: 3}
   - {fileID: 2251304896456389438, guid: 37d6708d25ef3c84f9d466117807c6ba, type: 3}
   releaseTimeLeft: 3
-  releaseTimeRight: 3
+  releaseTimeRight: 15
   boostSpawnProbability: 60
 --- !u!1001 &1925646868
 PrefabInstance:
