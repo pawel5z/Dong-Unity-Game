@@ -39,8 +39,8 @@ public class BallMovement : MonoBehaviour
 
     public IEnumerator Launch()
     {
-        boostsController.GetComponent<BoostsControllerBehaviour>().StartCoroutine("Work");
         yield return new WaitForSeconds(2);
+        boostsController.GetComponent<BoostsControllerBehaviour>().StartCoroutine("Work");
         StartCoroutine("SuddenDeathTimer");
         float angleRad = Random.Range(3, 7) * 15 * Mathf.Deg2Rad;
         rb2d.velocity = new Vector2(initSpeed * Mathf.Sin(angleRad) * rngPosNegList[Random.Range(0, rngPosNegList.Count)], initSpeed * Mathf.Cos(angleRad) * rngPosNegList[Random.Range(0, rngPosNegList.Count)]);
