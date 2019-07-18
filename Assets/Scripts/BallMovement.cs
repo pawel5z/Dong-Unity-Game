@@ -8,6 +8,9 @@ public class BallMovement : MonoBehaviour
     public GameObject suddenDeathController;
     public float timeToSuddenDeath;
     public GameObject boostsController;
+    public List<AudioClip> playerHit;
+    public AudioClip strongPlayerHit;
+    public AudioClip boundaryHit;
 
     private float speed;
     private readonly List<float> rngPosNegList = new List<float> { -1, 1 };
@@ -66,6 +69,7 @@ public class BallMovement : MonoBehaviour
     {
         if (collision.name == "Boundary")
         {
+            SoundControllerBehaviour.instance.PlayFxVariant(boundaryHit);
             rb2d.velocity = new Vector2(rb2d.velocity.x, -1 * rb2d.velocity.y);
         }
         else if (collision.tag == "Player")
@@ -74,16 +78,20 @@ public class BallMovement : MonoBehaviour
             GetComponentInChildren<ParticleSystem>().Play();
             float diff = transform.position.y - collision.transform.position.y;
             float sgn = Mathf.Sign(diff);
-            float intDiff = Mathf.Clamp(Mathf.Floor(diff * sgn), 0, 3);
-            float angleRad = 15 * intDiff * Mathf.Deg2Rad;
+            float absIntDiff = Mathf.Clamp(Mathf.Floor(diff * sgn), 0, 3);
+            if (absIntDiff == 3)
+                SoundControllerBehaviour.instance.PlayFxVariant(strongPlayerHit);
+            else
+                SoundControllerBehaviour.instance.PlayFxVariant(playerHit[Random.Range(0, playerHit.Count)]);
+            float angleRad = 15 * absIntDiff * Mathf.Deg2Rad;
             float xDirSgn = Mathf.Sign(rb2d.velocity.x);
-            float speedMult = 1 + (intDiff / 6);
+            float speedMult = 1 + (absIntDiff / 6);
 
             speed = initSpeed + 3 * Mathf.Log(2 + bounceCount, 2);
             rb2d.velocity = new Vector2(-1 * xDirSgn * speed * speedMult * Mathf.Cos(angleRad), sgn * speed * speedMult * Mathf.Sin(angleRad));
             bounceCount++;
 
-            if (intDiff == 3)
+            if (absIntDiff == 3)
                 GetComponentInChildren<TrailRenderer>().emitting = true;
             else
                 GetComponentInChildren<TrailRenderer>().emitting = false;
