@@ -5,7 +5,8 @@ using UnityEngine;
 public class SoundControllerBehaviour : MonoBehaviour
 {
     public static SoundControllerBehaviour instance = null;
-    public AudioSource fxSource;
+    public List<AudioSource> fxSourceList;
+    public int fxAsIndex = 0;
     public float pitchMultLeft;
     public float pitchMultRight;
 
@@ -19,8 +20,9 @@ public class SoundControllerBehaviour : MonoBehaviour
 
     public void PlayFxVariant(AudioClip clip)
     {
-        fxSource.clip = clip;
-        fxSource.pitch = Random.Range(pitchMultLeft, pitchMultRight);
-        fxSource.Play();
+        fxSourceList[fxAsIndex].clip = clip;
+        fxSourceList[fxAsIndex].pitch = Random.Range(pitchMultLeft, pitchMultRight);
+        fxSourceList[fxAsIndex].Play();
+        fxAsIndex = (fxAsIndex + 1) % fxSourceList.Count;
     }
 }
