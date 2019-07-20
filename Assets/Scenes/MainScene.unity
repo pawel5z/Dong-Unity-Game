@@ -1620,6 +1620,7 @@ MonoBehaviour:
   - {fileID: 1310340484}
   - {fileID: 1310340488}
   - {fileID: 1310340486}
+  fxAsIndex: 0
   pitchMultLeft: 0.9
   pitchMultRight: 1.1
 --- !u!82 &1310340488
@@ -2691,6 +2692,11 @@ PrefabInstance:
       propertyPath: boundaryHit
       value: 
       objectReference: {fileID: 8300000, guid: 207020ac25f9f224da11490c2146ff09, type: 3}
+    - target: {fileID: 1707461178590511935, guid: ae2d14d452ee49743bc06df30caee607,
+        type: 3}
+      propertyPath: powerUpHit
+      value: 
+      objectReference: {fileID: 8300000, guid: 3939623715c032b45859d5544613033b, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae2d14d452ee49743bc06df30caee607, type: 3}
 --- !u!114 &1967539956 stripped

@@ -8,9 +8,11 @@ public class BallMovement : MonoBehaviour
     public GameObject suddenDeathController;
     public float timeToSuddenDeath;
     public GameObject boostsController;
+
     public List<AudioClip> playerHit;
     public AudioClip strongPlayerHit;
     public AudioClip boundaryHit;
+    public AudioClip powerUpHit;
 
     private float speed;
     private readonly List<float> rngPosNegList = new List<float> { -1, 1 };
@@ -98,6 +100,7 @@ public class BallMovement : MonoBehaviour
         }
         else if (collision.tag == "Boost")
         {
+            SoundControllerBehaviour.instance.PlayFxVariant(powerUpHit);
             Instantiate(collision.gameObject.GetComponent<BoostBehaviour>().effectCarrier, lastPlayerHit.transform);
             Destroy(collision.gameObject);
         }
