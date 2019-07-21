@@ -161,6 +161,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd8b9a05d9a3c774dbb0c6ab319cc7b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  verticalVelocity: 10
+  verticalVelocity: 5
   effectCarrier: {fileID: 9150262561804011831, guid: 728dae54188ce5d42a1b25fdf790ee01,
     type: 3}
