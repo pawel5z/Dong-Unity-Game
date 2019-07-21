@@ -31,6 +31,6 @@ public class PlayerMovement : MonoBehaviour
 
     public void SuddenDeath()
     {
-        rb2d.velocity = new Vector2(xPosSgn * -1 * 0.5f, rb2d.velocity.y);
+        rb2d.velocity = new Vector2(xPosSgn * -1 * 1f, rb2d.velocity.y);
     }
 }
