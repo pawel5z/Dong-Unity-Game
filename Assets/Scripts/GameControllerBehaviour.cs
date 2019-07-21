@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class GameControllerBehaviour : MonoBehaviour
 {
     public static GameControllerBehaviour instance = null;
-    public GameObject gameOverPanel;
 
     private void Awake()
     {
@@ -16,12 +15,6 @@ public class GameControllerBehaviour : MonoBehaviour
             Destroy(gameObject);
 
         DontDestroyOnLoad(gameObject);
-    }
-
-    public IEnumerator GameOver()
-    {
-        yield return new WaitForSeconds(3);
-        gameOverPanel.SetActive(true);
     }
 
     public void Quit()

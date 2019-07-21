@@ -12,6 +12,7 @@ public class GoalBehaviour : MonoBehaviour
     public int maxScore;
     public GameObject gameController;
     public GameObject mainCamera;
+    public GameObject gameOverPanel;
 
     public AudioClip scoreSound;
     public AudioClip winSound;
@@ -30,7 +31,7 @@ public class GoalBehaviour : MonoBehaviour
             {
                 SoundControllerBehaviour.instance.PlayFxVariant(winSound);
                 winnerText.GetComponent<Animator>().SetTrigger("Win");
-                gameController.GetComponent<GameControllerBehaviour>().StartCoroutine("GameOver");
+                StartCoroutine("GameOver");
             }
             else
             {
@@ -38,5 +39,11 @@ public class GoalBehaviour : MonoBehaviour
                 collision.GetComponent<BallMovement>().StartCoroutine("Launch");
             }
         }
+    }
+
+    public IEnumerator GameOver()
+    {
+        yield return new WaitForSeconds(3);
+        gameOverPanel.SetActive(true);
     }
 }
