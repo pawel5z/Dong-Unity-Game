@@ -16,6 +16,7 @@ public class SoundControllerBehaviour : MonoBehaviour
             instance = this;
         else
             Destroy(gameObject);
+        DontDestroyOnLoad(gameObject);
     }
 
     public void PlayFxVariant(AudioClip clip)
