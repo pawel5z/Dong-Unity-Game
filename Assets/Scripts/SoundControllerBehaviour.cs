@@ -6,7 +6,7 @@ public class SoundControllerBehaviour : MonoBehaviour
 {
     public static SoundControllerBehaviour instance = null;
     public List<AudioSource> fxSourceList;
-    public int fxAsIndex = 0;
+    private int fxAsIndex = 0;
     public float pitchMultLeft;
     public float pitchMultRight;
 
