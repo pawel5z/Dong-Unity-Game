@@ -2764,7 +2764,7 @@ PrefabInstance:
         type: 3}
       propertyPath: strongPlayerHit
       value: 
-      objectReference: {fileID: 8300000, guid: a784a500e1a8ecd459d18afc6155a9f9, type: 3}
+      objectReference: {fileID: 8300000, guid: 432514eaed2ca2444aa09c77e562ec5b, type: 3}
     - target: {fileID: 1707461178590511935, guid: ae2d14d452ee49743bc06df30caee607,
         type: 3}
       propertyPath: boundaryHit
