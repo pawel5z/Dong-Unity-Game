@@ -76,3 +76,4 @@ MonoBehaviour:
   maxScore: 5
   gameController: {fileID: 0}
   mainCamera: {fileID: 0}
+  scoreSound: {fileID: 8300000, guid: d6f8352fbd3a5c74c8080989053509b6, type: 3}

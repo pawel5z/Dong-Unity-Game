@@ -13,10 +13,13 @@ public class GoalBehaviour : MonoBehaviour
     public GameObject gameController;
     public GameObject mainCamera;
 
+    public AudioClip scoreSound;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Ball")
         {
+            SoundControllerBehaviour.instance.PlayFxVariant(scoreSound);
             mainCamera.GetComponent<ScreenShaker>().StartCoroutine("Shake", 0.5);
             scoreParticles.Play();
             score++;
