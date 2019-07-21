@@ -77,3 +77,4 @@ MonoBehaviour:
   gameController: {fileID: 0}
   mainCamera: {fileID: 0}
   scoreSound: {fileID: 8300000, guid: d6f8352fbd3a5c74c8080989053509b6, type: 3}
+  winSound: {fileID: 8300000, guid: 7849fbee24f3dac439205ef4d14afecf, type: 3}

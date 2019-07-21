@@ -14,12 +14,12 @@ public class GoalBehaviour : MonoBehaviour
     public GameObject mainCamera;
 
     public AudioClip scoreSound;
+    public AudioClip winSound;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Ball")
         {
-            SoundControllerBehaviour.instance.PlayFxVariant(scoreSound);
             mainCamera.GetComponent<ScreenShaker>().StartCoroutine("Shake", 0.5);
             scoreParticles.Play();
             score++;
@@ -28,11 +28,15 @@ public class GoalBehaviour : MonoBehaviour
 
             if (score >= maxScore)
             {
+                SoundControllerBehaviour.instance.PlayFxVariant(winSound);
                 winnerText.GetComponent<Animator>().SetTrigger("Win");
                 gameController.GetComponent<GameControllerBehaviour>().StartCoroutine("GameOver");
             }
             else
+            {
+                SoundControllerBehaviour.instance.PlayFxVariant(scoreSound);
                 collision.GetComponent<BallMovement>().StartCoroutine("Launch");
+            }
         }
     }
 }
