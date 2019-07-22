@@ -255,7 +255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -912,6 +912,8 @@ GameObject:
   - component: {fileID: 777142975}
   - component: {fileID: 777142974}
   - component: {fileID: 777142973}
+  - component: {fileID: 777142976}
+  - component: {fileID: 777142977}
   m_Layer: 5
   m_Name: PositiveAnswer
   m_TagString: Untagged
@@ -982,19 +984,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1537651984}
-        m_MethodName: Restart
-        m_Mode: 1
+      - m_Target: {fileID: 777142976}
+        m_MethodName: LoadSceneByName
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: MainScene
           m_BoolArgument: 0
         m_CallState: 1
-      - m_Target: {fileID: 1310340487}
-        m_MethodName: PlayFxVariant
+      - m_Target: {fileID: 777142977}
+        m_MethodName: PlaySoundEffect
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 8300000, guid: 762c7975ad3b3824eab4cf5e7c93019e,
@@ -1044,6 +1046,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 777142971}
   m_CullTransparentMesh: 0
+--- !u!114 &777142976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 777142971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b46ccb0c97710d46bd3e547996ba6ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &777142977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 777142971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8d82e44b93688e4f90f911e6c07f076, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &907008361 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6175672977906054863, guid: 62ec955420796914da1ec767edfb76d9,
@@ -1348,7 +1374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1377,18 +1403,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1175527218}
   m_CullTransparentMesh: 0
---- !u!114 &1310340487 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8777386395348857941, guid: 7c66694d1e4c7be4cac8700ed9c5e8f0,
-    type: 3}
-  m_PrefabInstance: {fileID: 8777386396454699474}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce6a978634397c648866be13c1980550, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1379889693
 GameObject:
   m_ObjectHideFlags: 0
@@ -1480,6 +1494,8 @@ GameObject:
   - component: {fileID: 1385640272}
   - component: {fileID: 1385640271}
   - component: {fileID: 1385640270}
+  - component: {fileID: 1385640273}
+  - component: {fileID: 1385640274}
   m_Layer: 5
   m_Name: NegativeAnswer
   m_TagString: Untagged
@@ -1550,8 +1566,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1537651984}
-        m_MethodName: Restart
+      - m_Target: {fileID: 1385640273}
+        m_MethodName: Quit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1561,8 +1577,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
-      - m_Target: {fileID: 1310340487}
-        m_MethodName: PlayFxVariant
+      - m_Target: {fileID: 1385640274}
+        m_MethodName: PlaySoundEffect
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 8300000, guid: 762c7975ad3b3824eab4cf5e7c93019e,
@@ -1612,6 +1628,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1385640268}
   m_CullTransparentMesh: 0
+--- !u!114 &1385640273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385640268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd56123b8712a8942ac46b957ed1894c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1385640274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385640268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8d82e44b93688e4f90f911e6c07f076, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1439658536
 GameObject:
   m_ObjectHideFlags: 0
@@ -1812,18 +1852,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8193770598500475323}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1537651984 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8193770597802546347, guid: a6b5694556ef7124eb3c8210adc2491c,
-    type: 3}
-  m_PrefabInstance: {fileID: 8193770598500475323}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1537651983}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0ae0b96c9409d0428c40c4526b90166, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1543815272
 PrefabInstance:
   m_ObjectHideFlags: 0

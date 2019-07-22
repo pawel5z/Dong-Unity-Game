@@ -16,24 +16,4 @@ public class GameControllerBehaviour : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
     }
-
-    public void Quit()
-    {
-        Application.Quit();
-    }
-
-    public void Restart()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-
-    public void LoadScene(int index)
-    {
-        SceneManager.LoadScene(index);
-    }
-
-    public void LoadScene(string name)
-    {
-        SceneManager.LoadScene(name);
-    }
 }
