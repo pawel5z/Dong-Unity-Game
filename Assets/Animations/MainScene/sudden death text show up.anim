@@ -1006,9 +1006,17 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.5
-    functionName: TextsAlign
+    functionName: ScreenShake
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 1
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.5
+    functionName: PlaySoundEffect
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: a74fea366dbae6f4e9730b57eecd7a08,
+      type: 3}
+    floatParameter: 0
     intParameter: 0
     messageOptions: 0

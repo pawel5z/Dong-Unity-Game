@@ -2738,6 +2738,7 @@ GameObject:
   - component: {fileID: 2140177176}
   - component: {fileID: 2140177177}
   - component: {fileID: 2140177178}
+  - component: {fileID: 2140177179}
   m_Layer: 0
   m_Name: SuddenDeathTexts
   m_TagString: Untagged
@@ -2793,6 +2794,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 519420028}
+--- !u!114 &2140177179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2140177175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8d82e44b93688e4f90f911e6c07f076, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4083975107909079463
 PrefabInstance:
   m_ObjectHideFlags: 0

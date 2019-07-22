@@ -6,7 +6,7 @@ public class SuddenDeathFx : MonoBehaviour
 {
     public GameObject mainCamera;
 
-    public void TextsAlign(float screenShakeDuration)
+    public void ScreenShake(float screenShakeDuration)
     {
         mainCamera.GetComponent<ScreenShaker>().StartCoroutine("Shake", screenShakeDuration);
     }
