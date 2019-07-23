@@ -2,6 +2,7 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
 #
+# This part is for Unity
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
@@ -62,6 +63,7 @@ sysinfo.txt
 crashlytics-build.properties
 
 ###########################################################
+# This part is for Windows files
 
 # Windows thumbnail cache files
 Thumbs.db
