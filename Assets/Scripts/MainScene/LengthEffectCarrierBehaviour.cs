@@ -18,7 +18,7 @@ public class LengthEffectCarrierBehaviour : EffectCarrierBehaviour
         Destroy(gameObject, effectDuration);
     }
 
-    private void OnDestroy()
+    protected override void OnDestroy()
     {
         parentTransform.localScale = defaultPlayerScale;
     }

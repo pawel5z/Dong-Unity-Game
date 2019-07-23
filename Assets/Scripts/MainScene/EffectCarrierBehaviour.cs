@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EffectCarrierBehaviour : MonoBehaviour
+public abstract class EffectCarrierBehaviour : MonoBehaviour
 {
     public float effectDuration;
+
+    protected abstract void OnDestroy();
 }

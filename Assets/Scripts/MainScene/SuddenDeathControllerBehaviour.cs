@@ -23,5 +23,6 @@ public class SuddenDeathControllerBehaviour : MonoBehaviour
         {
             player.GetComponent<PlayerMovement>().Reset();
         }
+        suddenDeathText.GetComponent<Animator>().Play("Idle");
     }
 }

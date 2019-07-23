@@ -2472,6 +2472,8 @@ MonoBehaviour:
   boosts:
   - {fileID: 7637635640215653754, guid: 9526ed638d0e34b47a8de255d8657f7a, type: 3}
   - {fileID: 2251304896456389438, guid: 37d6708d25ef3c84f9d466117807c6ba, type: 3}
+  - {fileID: 6165688731573666343, guid: 35a8c9ba3c3985946946057f6fb307a4, type: 3}
+  - {fileID: 7987446997776801874, guid: 108daaea7daa01d4cab291e41464cd7f, type: 3}
   releaseTimeLeft: 3
   releaseTimeRight: 15
   boostSpawnProbability: 60
@@ -2917,11 +2919,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameController
       objectReference: {fileID: 0}
-    - target: {fileID: 8193770597802546347, guid: a6b5694556ef7124eb3c8210adc2491c,
-        type: 3}
-      propertyPath: gameOverPanel
-      value: 
-      objectReference: {fileID: 1536364649}
     - target: {fileID: 8193770597802546346, guid: a6b5694556ef7124eb3c8210adc2491c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2977,6 +2974,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8193770597802546347, guid: a6b5694556ef7124eb3c8210adc2491c,
+        type: 3}
+      propertyPath: gameOverPanel
+      value: 
+      objectReference: {fileID: 1536364649}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6b5694556ef7124eb3c8210adc2491c, type: 3}
 --- !u!1001 &8777386396454699474
