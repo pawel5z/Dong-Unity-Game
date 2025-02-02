@@ -1,4 +1,4 @@
-# Dong Unity Game
+# Pong Unity Game
 My Unity version of popular arcade game *Pong*.
 No. of players: 2
 
